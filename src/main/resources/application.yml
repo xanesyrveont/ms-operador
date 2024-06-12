@@ -35,3 +35,7 @@ info:
   app:
     name: MS-PRESTAMOS
     description: Microservicio para la gestión de prestamos de libros
+
+springdoc:
+  swagger-ui:
+    path: /docs/swagger-ui.html

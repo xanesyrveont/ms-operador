@@ -1,5 +1,6 @@
 package net.unir.grupo_12.prestamos.controller;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import net.unir.grupo_12.prestamos.entity.dto.Detalle;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/detalles")
+@Tag(name = "Detalles", description = "Endpoint de Detalles")
 public class PrestamoDetalleController {
 
     private final PrestamoDetalleService service;
