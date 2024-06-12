@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mariadb:
+    image: 'mariadb:latest'
+    volumes:
+      - './mariadb_data:/var/lib/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'Admin.123'
+      MYSQL_DATABASE: prestamos_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 'Admin.123'
+    ports:
+      - '3306:3306'
