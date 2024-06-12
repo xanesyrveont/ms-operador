@@ -39,12 +39,14 @@ public class PrestamoDetalleServiceImpl implements PrestamoDetalleService {
         repository.findById(id).ifPresentOrElse(
                 model -> {
                     PrestamoModel prestamoModel = new PrestamoModel();
+                    prestamoModel.setId(detalle.prestamo().id());
                     prestamoModel.setUsuarioId(detalle.prestamo().usuarioId());
                     prestamoModel.setFechaPrestamo(detalle.prestamo().fechaPrestamo());
                     prestamoModel.setFechaDevolucion(detalle.prestamo().fechaDevolucion());
 
                     model.setPrestamo(prestamoModel);
                     model.setLibroId(detalle.libroId());
+                    model.setFechaRetorno(detalle.fechaRetorno());
                     repository.save(model);
                 },
                 () -> {
