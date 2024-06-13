@@ -6,8 +6,7 @@ import java.time.LocalDate;
 
 public record Detalle(
         Long id,
-        @JsonProperty("libro_id")
-        Long libroId,
+        Libro libro,
         @JsonProperty("fecha_retorno")
         LocalDate fechaRetorno,
         Prestamo prestamo

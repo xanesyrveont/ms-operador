@@ -1,6 +1,8 @@
 package net.unir.grupo_12.prestamos.service;
 
+import net.unir.grupo_12.prestamos.client.LibroClient;
 import net.unir.grupo_12.prestamos.entity.dto.Detalle;
+import net.unir.grupo_12.prestamos.entity.dto.Libro;
 import net.unir.grupo_12.prestamos.entity.mapper.PrestamoDetalleMapper;
 import net.unir.grupo_12.prestamos.entity.model.PrestamoDetalleModel;
 import net.unir.grupo_12.prestamos.entity.model.PrestamoModel;
@@ -13,10 +15,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class PrestamoDetalleServiceImpl implements PrestamoDetalleService {
 
+    private final LibroClient client;
     private final PrestamoDetalleMapper mapper;
     private final PrestamoDetalleRepository repository;
 
-    public PrestamoDetalleServiceImpl(PrestamoDetalleMapper mapper, PrestamoDetalleRepository repository) {
+    public PrestamoDetalleServiceImpl(LibroClient client, PrestamoDetalleMapper mapper, PrestamoDetalleRepository repository) {
+        this.client = client;
         this.mapper = mapper;
         this.repository = repository;
     }
@@ -36,6 +40,9 @@ public class PrestamoDetalleServiceImpl implements PrestamoDetalleService {
     @Override
     public void save(Detalle detalle) {
         Long id = detalle.id() != null ? detalle.id() : 0L;
+
+        Libro libro = client.findById(detalle.libro().id());
+
         repository.findById(id).ifPresentOrElse(
                 model -> {
                     PrestamoModel prestamoModel = new PrestamoModel();
@@ -45,13 +52,13 @@ public class PrestamoDetalleServiceImpl implements PrestamoDetalleService {
                     prestamoModel.setFechaDevolucion(detalle.prestamo().fechaDevolucion());
 
                     model.setPrestamo(prestamoModel);
-                    model.setLibroId(detalle.libroId());
+                    model.setLibroId(libro.id());
                     model.setFechaRetorno(detalle.fechaRetorno());
                     repository.save(model);
                 },
                 () -> {
                     PrestamoDetalleModel model = new PrestamoDetalleModel();
-                    model.setLibroId(detalle.libroId());
+                    model.setLibroId(libro.id());
 
                     PrestamoModel prestamoModel = new PrestamoModel();
                     prestamoModel.setId(detalle.id());

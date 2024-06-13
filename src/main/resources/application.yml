@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8080}
+  port: ${PORT:8082}
 
 spring:
   application:
@@ -39,3 +39,15 @@ info:
 springdoc:
   swagger-ui:
     path: /docs/swagger-ui.html
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+    hostname: ms-prestamos
+
+service:
+  libros:
+    url: http://ms-libros/api/libros/%s

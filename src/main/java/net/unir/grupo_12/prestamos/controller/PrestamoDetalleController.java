@@ -48,7 +48,7 @@ public class PrestamoDetalleController {
     public void update(@NotNull @PathVariable Long id, @RequestBody @Valid Detalle detalle, BindingResult result) {
         service.save(new Detalle(
                 id,
-                detalle.libroId(),
+                detalle.libro(),
                 detalle.fechaRetorno(),
                 detalle.prestamo()
         ));
