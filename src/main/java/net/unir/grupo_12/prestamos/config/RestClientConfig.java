@@ -10,7 +10,8 @@ public class RestClientConfig {
 
     @Bean
     @LoadBalanced
-    public RestClient restClient() {
-        return RestClient.create();
+    public RestClient.Builder restClient() {
+        return RestClient.builder();
     }
 }
+// https://docs.spring.io/spring-cloud-commons/reference/spring-cloud-commons/common-abstractions.html#rest-client-loadbalancer-client
