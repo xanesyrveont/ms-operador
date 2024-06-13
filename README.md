@@ -1,4 +1,4 @@
-# MS-PRESTAMOS
+# MS-OPERADOR
 
 Para levantar la base de datos, ejecuta el siguiente comando dentro de la carpeta del proyecto:
 

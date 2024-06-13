@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ms-prestamos
+    name: ms-operador
 
   datasource:
     username: ${DATABASE_USER:admin}
@@ -33,7 +33,7 @@ management:
 
 info:
   app:
-    name: MS-PRESTAMOS
+    name: MS-OPERADOR
     description: Microservicio para la gestión de prestamos de libros
 
 springdoc:
@@ -46,7 +46,7 @@ eureka:
       defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
   instance:
     prefer-ip-address: true
-    hostname: ms-prestamos
+    hostname: ms-operador
 
 service:
   libros:
