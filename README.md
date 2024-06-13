@@ -5,7 +5,8 @@ Para levantar la base de datos, ejecuta el siguiente comando dentro de la carpet
 ```bash
 docker-compose up
 ```
-## Construir 
+
+## Construir
 
 Para crear el ejecutable:
 
@@ -14,7 +15,14 @@ Para crear el ejecutable:
 ``` 
 
 ## Ejecutar
-Para arrancar la aplicación, ejecuta:
+
+Para arrancar la aplicación, ejecuta uno de los siguientes comandos:
+
+```bash
+./gradlew bootRun
+``` 
+
+O
 
 ```bash
 bash -c "java -jar build/libs/*.jar"
@@ -22,4 +30,5 @@ bash -c "java -jar build/libs/*.jar"
 
 ## Documentación
 
-Puede consultar la documentación de los servicios a través del siguiente enlace: [Swagger](http://localhost:8080/docs/swagger-ui/index.html)
+Puede consultar la documentación de los servicios a través del siguiente
+enlace: [Swagger](http://localhost:8080/docs/swagger-ui/index.html)
