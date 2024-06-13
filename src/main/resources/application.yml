@@ -50,4 +50,4 @@ eureka:
 
 service:
   libros:
-    url: http://ms-libros/api/libros/%s
+    url: http://ms-buscador/api/libros/%s
