@@ -61,7 +61,7 @@ public class PrestamoDetalleServiceImpl implements PrestamoDetalleService {
                     model.setLibroId(libro.id());
 
                     PrestamoModel prestamoModel = new PrestamoModel();
-                    prestamoModel.setId(detalle.id());
+                    prestamoModel.setId(detalle.prestamo().id());
 
                     model.setPrestamo(prestamoModel);
                     model.setFechaRetorno(detalle.fechaRetorno());
