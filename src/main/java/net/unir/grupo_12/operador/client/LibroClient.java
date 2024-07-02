@@ -19,7 +19,7 @@ public class LibroClient {
         this.restClient = restClient;
     }
 
-    public Libro findById(Long id) {
+    public Libro findById(String id) {
         return restClient.build().get()
                 .uri(String.format(librosApi, id))
                 .retrieve()

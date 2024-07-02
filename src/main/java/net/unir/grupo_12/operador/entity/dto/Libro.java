@@ -1,7 +1,7 @@
 package net.unir.grupo_12.operador.entity.dto;
 
 public record Libro(
-        Long id,
+        String id,
         String titulo,
         String autor,
         String isbn,

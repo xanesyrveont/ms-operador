@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "prestamo_detalle")
 public class PrestamoDetalleModel extends BaseModel {
-    private Long libroId;
+    private String libroId;
     private LocalDate fechaRetorno;
     @JsonBackReference
     @ManyToOne(optional = false)
