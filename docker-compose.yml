@@ -1,9 +1,9 @@
 version: '2'
 services:
-  mariadb:
-    image: 'mariadb:latest'
+  mysql:
+    image: 'mysql:latest'
     volumes:
-      - './mariadb_data:/var/lib/mysql'
+      - './mysql_data:/var/lib/mysql'
     environment:
       MYSQL_ROOT_PASSWORD: 'Admin.123'
       MYSQL_DATABASE: prestamos_db

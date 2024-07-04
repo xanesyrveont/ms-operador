@@ -37,6 +37,7 @@ out/
 .vscode/
 
 ### Docker ###
+mysql_data/
 mariadb_data/
 
 ### Env ###
