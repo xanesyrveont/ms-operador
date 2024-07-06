@@ -10,6 +10,6 @@ RUN gradle build -x test
 
 # Usamos una imagen de Openjdk
 FROM openjdk:21
-EXPOSE 8081
+EXPOSE 8082
 COPY --from=build /home/gradle/project/build/libs/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
